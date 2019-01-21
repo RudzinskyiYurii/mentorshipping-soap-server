@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://example.com/biography"
+           targetNamespace="http://example.com/biography"
+           elementFormDefault="qualified">
+
+    <xs:element name="getBioRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getBioResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="author" type="tns:author"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="author">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="authorId" type="xs:long"/>
+            <xs:element name="bio" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
